@@ -1,6 +1,6 @@
-function detectAdBlocker(timeout){
-    var racer = new Promise(function (resolve, reject){
-        setTimeout(reject, timeout);
+function detectAdBlocker(max_duration){
+    var timeout = new Promise(function (resolve, reject){
+        setTimeout(reject, max_duration);
     });
     
     var honeypot = new Promise(function (resolve){
@@ -16,5 +16,5 @@ function detectAdBlocker(timeout){
         document.body.appendChild(img);
     });
 
-    return Promise.race([honeypot, racer])
+    return Promise.race([honeypot, timeout])
 }
