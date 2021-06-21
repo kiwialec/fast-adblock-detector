@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <div id="resultPrintArea"></div>
+    <script src="./detect.min.js"></script>
+    <script>
+        var startTime = new Date()
+        detectAdBlocker(3000)
+        .then(function(hasAdBlocker){
+            var tookMs = new Date().getTime() - startTime.getTime();
+            console.log({hasAdBlocker})
+           // The detection was successful!
+           printResults("Success. You "+ ((hasAdBlocker) ? "have" : "do NOT have") + " an Ad Blocker enabled.", tookMs)
+        })
+        .catch(function(error){
+            var tookMs = new Date().getTime() - startTime.getTime();
+            // An error prevented the script from working.
+            printResults("An Error Occurred: "+JSON.stringify(error), tookMs)
+        })
+
+        function printResults(text, ms){
+            document.getElementById("resultPrintArea").innerHTML = `${text}<BR><BR>${(ms) ? `Took ${ms}ms` : ``}`
+        }
+
+        
+    </script>
+
+</body>
+</html>
