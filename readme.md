@@ -12,7 +12,9 @@ It works by loading a DoubleClick pixel into the browser and detecting when that
 
 ## Usage
 
-Call the function `detectAdBlocker` with the parameter _timeout_. i.e. `detectAdBlocker(3000)`
+Call the function `detectAdBlocker` with the parameter _timeout_. i.e. `detectAdBlocker(3000)`.
+
+Returns `Promise<Boolean>` (true = ad blocker is active) or `Exception`
 
 ### Promises 
 
@@ -44,5 +46,19 @@ Call the function `detectAdBlocker` with the parameter _timeout_. i.e. `detectAd
         }
     }
     init();
+</script>
+```
+
+### Inline
+```
+<script type="text/javascript">
+    var hasAdBlocker = function(o){var z=Promise;return z.race([new z(function(o){var t=new Image;t.height=t.width=2,t.loading="eager",t.onload=function(){o(!1)},t.onerror=t.onabort=function(){o(!0)},t.src="https://ad.doubleclick.net/pagead/viewthroughconversion/pixel_id/",document.body.appendChild(t)}),new z(function(n,e){setTimeout(e,o)})])}(3000)
+    .then(function(hasAdBlocker){
+        console.log({hasAdBlocker})
+    })
+    .catch(function(error){
+        // An error occurred.
+        console.log("There was an error")
+    })
 </script>
 ```
