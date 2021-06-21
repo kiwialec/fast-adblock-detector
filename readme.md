@@ -6,7 +6,13 @@ This library quickly identifies users who have an adblocker installed on their b
 
 It works by loading a DoubleClick pixel into the browser and detecting when that pixel fails to load. This is relatively reliable as DoubleClick is pretty much universally blocked by ad blockers.
 
+## Demo
+
+[See a working demo here](https://kiwialec.github.io/fast-adblock-detector/demo.html)
+
 ## Usage
+
+Call the function `detectAdBlocker` with the parameter _timeout_. i.e. `detectAdBlocker(3000)`
 
 ### Promises 
 
@@ -18,7 +24,8 @@ It works by loading a DoubleClick pixel into the browser and detecting when that
         console.log({hasAdBlocker})
     })
     .catch(function(error){
-        // An error occurred. Check error.timeout to see if it timed out
+        // An error occurred.
+        console.log("There was an error")
     })
 </script>
 ```
@@ -33,8 +40,7 @@ It works by loading a DoubleClick pixel into the browser and detecting when that
             var hasAdBlocker = await detectAdBlocker(3000);
             console.log({hasAdBlocker})
         }catch(error){
-            console.log(error)
-            // An error occurred. Check error.timeout to see if it timed out
+            console.log("There was an error")
         }
     }
     init();
