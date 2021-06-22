@@ -18,7 +18,7 @@ It works by loading Google and Facebook pixels into the browser and detecting if
 **Arguments**
 
 - timeout: Number of milliseconds to wait for the pixel to load before returning false 
-  - (defaults to: 1000)
+  - defaults to: 1000
 - pixels: the URLs of pixels to load into the browser. The function will return true if _any_ of these fail to load (so a 404 error will cause false positives).
   - defaults to: ["https://www.facebook.com/tr?ad_slot=0&&ad_height=0&w=-ad-336x280-","https://ad.doubleclick.net/pagead/viewthroughconversion/pixel_id/"]
 
