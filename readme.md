@@ -1,6 +1,6 @@
 ## Fast AdBlock Detector
 
-This library quickly identifies users who have an adblocker installed on their browser or network (i.e. PiHole). It's relatively light (just 623 bytes minified) and uses no external libraries or dependencies.
+This library quickly identifies users who have an adblocker installed on their browser or network (i.e. PiHole). It's relatively light (just 614 bytes minified) and uses no external libraries or dependencies.
 
 ## How it works
 

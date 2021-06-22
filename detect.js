@@ -10,7 +10,7 @@ class adBlockDetector {
     createAdBlockHoneypot(params){
         var timeout = new Promise(resolve => {
             setTimeout(() => {
-                resolve({status: false})
+                resolve(false)
             }, params.timeout);
         });
         
