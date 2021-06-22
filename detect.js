@@ -1,5 +1,6 @@
 class adBlockDetector {
     constructor(params) { 
+        var params = params || {}
         this.timeout = params.timeout || 1000
         this.pixels = params.pixels || [
             "https://www.facebook.com/tr?ad_slot=0&&ad_height=0&w=-ad-336x280-",

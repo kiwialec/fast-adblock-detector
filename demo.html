@@ -12,7 +12,7 @@
     <script src="./detect.min.js"></script>
     <script>
         var startTime = new Date()
-        var detectAdblock = new adBlockDetector({timeout: 3000});
+        var detectAdblock = new adBlockDetector();
         detectAdblock.runTests()
         .then(function(hasAdBlocker){
             var tookMs = new Date().getTime() - startTime.getTime();
