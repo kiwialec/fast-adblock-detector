@@ -26,7 +26,7 @@ It works by loading Google and Facebook pixels into the browser and detecting if
 
 ### Promises 
 
-```
+```html
 <script type="text/javascript" src="detect.min.js"></script>
 <script type="text/javascript">
     var detectAdblock = new adBlockDetector();
@@ -39,7 +39,7 @@ It works by loading Google and Facebook pixels into the browser and detecting if
 
 ### Async/await 
 
-```
+```html
 <script type="text/javascript" src="detect.min.js"></script>
 <script type="text/javascript">
     async function init(){
@@ -50,4 +50,14 @@ It works by loading Google and Facebook pixels into the browser and detecting if
     }
     init();
 </script>
+```
+
+### Customising behaviour
+
+Add arguments to when initialising the class, for instance:
+```javascript
+var detectAdblock = new adBlockDetector({
+    timeout: 750,
+    pixels: ["https://mydomain.com/ads/pixel.gif?ad_height=100"]
+})
 ```
