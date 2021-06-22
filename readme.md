@@ -12,7 +12,8 @@ It works by loading Google and Facebook pixels into the browser and detecting if
 
 ## Usage
 
-Call the function `detectAdBlocker`, i.e. detectAdBlocker({timeout: 3000}).
+- Set options with `new adBlockDetector`, i.e. `new adBlockDetector({timeout: 3000})`
+- Call `runTests` to check whether the user is blocking the pixels
 
 **Arguments**
 
@@ -20,7 +21,7 @@ Call the function `detectAdBlocker`, i.e. detectAdBlocker({timeout: 3000}).
 - pixels: the URLs of pixels to load into the browser. The function will return true if _any_ of these fail to load (so a 404 error will cause false positives).
 - - defaults to: ["https://www.facebook.com/tr?ad_slot=0&&ad_height=0&w=-ad-336x280-","https://ad.doubleclick.net/pagead/viewthroughconversion/pixel_id/"]
 
-Returns `Promise<Boolean>`. Returns true when adblock is active; and false when adblocker is not active or there is a timeout/other error
+`runTests` returns `Promise<Boolean>`. Returns true when adblock is active; and false when adblocker is not active or there is a timeout/other error
 
 ### Promises 
 
